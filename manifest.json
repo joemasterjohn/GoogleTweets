@@ -1,0 +1,35 @@
+{
+  "name": "GoogleTweets",
+  "version": "0.0.1",
+  "icons": { "48": "img/icon-48.png",
+            "128": "img/icon-128.png" },
+  "description": "Tweets your Google searches",
+  "background": {
+    "scripts": [
+      "chrome_ex_oauthsimple.js",
+      "chrome_ex_oauth.js",
+      "background.js",
+      "twitter.js",
+      "status.js",
+      "notice.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "",
+    "default_icon": "img/icon-19.png"
+  },
+  "web_accessible_resources": ["chrome_ex_oauth.html"],
+  "permissions": [
+    "tabs",
+    "identity",
+    "webRequest",
+    "webRequestBlocking",
+    "https://*.chromiumapp.org/*",
+    "https://api.twitter.com/oauth/request_token",
+    "https://api.twitter.com/oauth/access_token",
+    "https://api.twitter.com/oauth/authorize",
+    "https://api.twitter.com/1.1",
+    "*://*.google.com/*"
+ ],
+  "manifest_version": 2
+}
