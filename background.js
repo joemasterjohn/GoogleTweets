@@ -6,8 +6,8 @@ var oauth = ChromeExOAuth.initBackgroundPage({
   'request_url' : 'https://api.twitter.com/oauth/request_token',
   'authorize_url' : 'https://api.twitter.com/oauth/authorize',
   'access_url' : 'https://api.twitter.com/oauth/access_token',
-  'consumer_key' : 'UZzsdMiiO6h5WhOV5DHBwu0Ml',
-  'consumer_secret' : 'rnmN0IYeE4ZQrD5sahdzWNJM03smXy4yckLcnDLZCtceH8yolF',
+  'consumer_key' : '',
+  'consumer_secret' : '',
   'app_name' : 'Google Tweets'
   
 });
