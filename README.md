@@ -6,3 +6,5 @@ You must create a twitter application and copy your consumer key & secret into b
 
 # Installation
 If you're a pleb: web.cs.miami.edu/~jgmaster/GoogleTweets.crx
+Go to "chrome://extensions"
+Drag and drop the .crx file onto the extensions page
