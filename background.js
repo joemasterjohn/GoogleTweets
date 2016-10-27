@@ -14,11 +14,29 @@ var oauth = ChromeExOAuth.initBackgroundPage({
 
 var authorized = false;
 
+var on = false;
+
+function setIcon() {
+   if (on) {
+     chrome.browserAction.setIcon({ 'path' : 'img/icon-19-on.png'});
+   } else {
+     chrome.browserAction.setIcon({ 'path' : 'img/icon-19-off.png'});
+   }
+};
+
 
 function getTwitterAuth() {
-  oauth.authorize(function(token, secret) {
-    authorized = true;
-  });
+  if(!authorized) {
+    oauth.authorize(function(token, secret) {
+      authorized = true;
+      on = true;
+      setIcon();
+    });
+  } else {
+    on = !on;
+  }
+
+  setIcon();
 };
 
 function logout() {
@@ -34,7 +52,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     var url = new URL(info.url);
     var search = url.searchParams.get("q");
 
-    if(search && authorized) {
+    if(search && authorized && on) {
       Twitter.update(search);
       console.log("search string: " + search);
     }
