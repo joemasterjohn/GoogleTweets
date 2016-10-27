@@ -66,7 +66,6 @@ chrome.webRequest.onBeforeRequest.addListener(
       console.log("search string: " + search);
     }
 
-    // Redirect the lolcal request to a random loldog URL.
   },
   // filters
   {
