@@ -42,7 +42,16 @@ function getTwitterAuth() {
 function logout() {
   oauth.clearTokens();
   authorized = false;
+  on = false;
+  setIcon();
 };
+
+chrome.contextMenus.removeAll();
+chrome.contextMenus.create({
+	title: "logout",
+	contexts: ["browser_action"],
+	onclick: logout
+});
 
 chrome.browserAction.onClicked.addListener(getTwitterAuth);
 
